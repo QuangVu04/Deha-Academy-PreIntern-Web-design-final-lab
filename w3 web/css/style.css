@@ -65,17 +65,18 @@ div {
   top: 0;
   width: 100%;
   overflow: hidden;
+  box-shadow: #757575;
 }
 .w3-bar {
   display: flex;
-  justify-content: space-between; 
-  align-items: center;            
+  justify-content: space-between;
+  align-items: center;
   background-color: #ffffff;
   width: 100%;
 }
 
 .w3-right {
-  order: 2;              
+  order: 2;
   display: flex;
   justify-content: flex-end;
 }
@@ -101,7 +102,6 @@ div {
   .w3-hide-large {
     display: none;
   }
-
   .w3-quarter {
     width: 24.99999%;
   }
@@ -111,13 +111,17 @@ div {
   .w3-hide-small {
     display: none;
   }
+  .w3-col.m6,
+  .w3-half {
+    width: 49.99999%;
+  }
 }
 
 .w3-large {
   font-size: 18px;
 }
 
-.w3-jumbo  {
+.w3-jumbo {
   font-size: 64px !important;
 }
 
@@ -184,4 +188,22 @@ div {
 
 .w3-row-padding {
   padding: 0 8px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.w3-light-grey {
+  color: #000 !important;
+  background-color: #f1f1f1 !important;
+}
+
+.w3-col {
+  padding: 0 8px;
+}
+
+.w3-black {
+  color: #fff;
+  background-color: #000;
+  text-decoration: none;
 }
