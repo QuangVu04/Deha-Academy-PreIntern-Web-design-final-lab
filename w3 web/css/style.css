@@ -1,0 +1,187 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  line-height: 1.8;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  margin: 10px 0;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  unicode-bidi: isolate;
+}
+
+div {
+  display: block;
+  unicode-bidi: isolate;
+}
+
+/* .w3-card {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+} */
+.bgimg-1 {
+  background-position: center;
+  background-size: cover;
+  background-image: url("../assets/background.jpeg");
+  min-height: 100%;
+}
+
+.w3-button {
+  padding: 16px;
+}
+
+.w3-top {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+}
+.w3-bar {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;            
+  background-color: #ffffff;
+  width: 100%;
+}
+
+.w3-right {
+  order: 2;              
+  display: flex;
+  justify-content: flex-end;
+}
+
+.w3-bar-item {
+  text-decoration: none;
+  color: #000;
+  font-size: 15px;
+}
+
+#myNavbar {
+  background-color: #ffffff;
+}
+
+#myNavbar a {
+  color: #000000;
+  text-align: center;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+@media screen and (min-width: 601px) {
+  .w3-hide-large {
+    display: none;
+  }
+
+  .w3-quarter {
+    width: 24.99999%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .w3-hide-small {
+    display: none;
+  }
+}
+
+.w3-large {
+  font-size: 18px;
+}
+
+.w3-jumbo  {
+  font-size: 64px !important;
+}
+
+.w3-text-white {
+  color: #ffffff;
+}
+
+.w3-display-left {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.w3-padding-large {
+  padding: 12px 24px;
+  cursor: pointer;
+}
+
+.w3-margin-top {
+  margin-top: 16px;
+}
+
+.w3-margin-bottom {
+  margin-bottom: 16px;
+}
+
+.w3-large {
+  font-size: 18px;
+}
+
+.w3-opacity {
+  opacity: 0.6;
+}
+
+.w3-button:hover {
+  color: #000;
+  background-color: #ccc;
+}
+
+.w3-white {
+  background-color: #ffffff;
+  color: #000000;
+  text-decoration: none;
+}
+
+.w3-hover-opacity-off:hover {
+  opacity: 1;
+}
+
+.w3-display-bottomleft {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.w3-text-grey {
+  color: #757575;
+}
+
+.w3-center {
+  text-align: center;
+}
+
+.w3-row-padding {
+  padding: 0 8px;
+}
