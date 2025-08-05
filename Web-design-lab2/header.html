@@ -1,28 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <link rel="stylesheet" href="css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
 
-  </head>
-  <body>
-     <script src="js/app.js"></script>
+<head>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+</head>
+
+<body>
   <header class="navbar w-100 flex">
-    <div class="navbar-top w-100 flex padding-10">
+    <div class="navbar-top w-100 flex padding-10 hide-small">
       <div class="w-80 flex">
         <div class="logo flex">🔆 thegioididong</div>
         <div class="search-box flex">
           <i class="fa fa-search search-icon"></i>
-          <input
-            type="text"
-            placeholder="Bạn tìm gì..."
-            class="padding-16 w-100"
-            onfocus="showSuggest()"
-            onblur="hideSuggest()"
-          />
+          <input type="text" placeholder="Bạn tìm gì..." class="padding-16 w-100" onfocus="showSuggest()"
+            onblur="hideSuggest()" />
 
           <div class="search-suggest bg-white" id="search-suggest">
             <ul>
@@ -49,94 +42,93 @@
         <div class="menu-item button flex padding-16">
           <a>
             <i class="fa fa-user"></i>
-            Đăng nhập</a
-          >
+            Đăng nhập</a>
         </div>
         <div class="menu-item button flex padding-16">
           <a>
             <i class="fa fa-shopping-cart"></i>
-            Giỏ hàng</a
-          >
+            Giỏ hàng</a>
         </div>
         <div class="menu-item button button1 flex padding-16">
           <a><i class="fa fa-map-marker"></i> Hồ Chí Minh</a>
         </div>
       </div>
     </div>
-    <div class="navbar-bottom w-80">
+    <div class="navbar-bottom w-80 hide-small" id="navbar-bottom">
       <ul class="main-menu flex">
         <li>
-          <i
-            ><img
-              src="https://cdn.tgdd.vn/content/phonne-24x24.png"
-              alt="icon Điện thoại" /></i
-          >Điện thoại
+          <i><img src="https://cdn.tgdd.vn/content/phonne-24x24.png" alt="icon Điện thoại" /></i>Điện thoại
         </li>
         <li>
-          <i
-            ><img
-              src="https://cdn.tgdd.vn/content/laptop-24x24.png"
-              alt="icon Laptop" /></i
-          >Laptop
+          <i><img src="https://cdn.tgdd.vn/content/laptop-24x24.png" alt="icon Laptop" /></i>Laptop
         </li>
         <li>
-          <i
-            ><img
-              src="https://cdn.tgdd.vn/content/phu-kien-24x24.png"
-              alt="icon Phụ kiện" /></i
-          >Phụ kiện
+          <i><img src="https://cdn.tgdd.vn/content/phu-kien-24x24.png" alt="icon Phụ kiện" /></i>Phụ kiện
         </li>
         <li>
-          <i
-            ><img
-              src="https://cdn.tgdd.vn/content/smartwatch-24x24.png"
-              alt="icon Smartwatch" /></i
-          >Smartwatch
+          <i><img src="https://cdn.tgdd.vn/content/smartwatch-24x24.png" alt="icon Smartwatch" /></i>Smartwatch
         </li>
         <li>
-          <i
-            ><img
-              src="https://cdn.tgdd.vn/content/watch-24x24.png"
-              alt="icon Đồng hồ" /></i
-          >Đồng hồ
+          <i><img src="https://cdn.tgdd.vn/content/watch-24x24.png" alt="icon Đồng hồ" /></i>Đồng hồ
         </li>
         <li>
-          <i
-            ><img
-              src="https://cdn.tgdd.vn/content/tablet-24x24.png"
-              alt="icon Tablet" /></i
-          >Tablet
+          <i><img src="https://cdn.tgdd.vn/content/tablet-24x24.png" alt="icon Tablet" /></i>Tablet
         </li>
         <li>
-          <i
-            ><img
-              src="https://cdn.tgdd.vn/content/may-cu-24x24.png"
-              alt="icon Máy cũ, Thu cũ" /></i
-          >Máy cũ,Thu cũ
+          <i><img src="https://cdn.tgdd.vn/content/may-cu-24x24.png" alt="icon Máy cũ, Thu cũ" /></i>Máy cũ,Thu cũ
         </li>
         <li>
-          <i
-            ><img
-              src="https://cdn.tgdd.vn/content/PC-24x24.png"
-              alt="icon Màn hình, Máy in" /></i
-          >Màn hình, Máy in
+          <i><img src="https://cdn.tgdd.vn/content/PC-24x24.png" alt="icon Màn hình, Máy in" /></i>Màn hình, Máy in
         </li>
         <li>
-          <i
-            ><img
-              src="https://cdn.tgdd.vn/content/sim-24x24.png"
-              alt="icon Sim, Thẻ cào" /></i
-          >Sim, Thẻ cào
+          <i><img src="https://cdn.tgdd.vn/content/sim-24x24.png" alt="icon Sim, Thẻ cào" /></i>Sim, Thẻ cào
         </li>
         <li>
-          <i
-            ><img
-              src="https://cdn.tgdd.vn/content/tien-ich-24x24.png"
-              alt="icon Dịch vụ tiện ích" /></i
-          >Dịch vụ tiện
+          <i><img src="https://cdn.tgdd.vn/content/tien-ich-24x24.png" alt="icon Dịch vụ tiện ích" /></i>Dịch vụ tiện
         </li>
       </ul>
     </div>
+
+    <div class="navbar-top w-100 flex padding-10 hide-big" style="justify-content: flex-start; flex-direction: column;">
+      <div class="w-100 flex" style="justify-content: flex-start;justify-content: space-between;">
+        <span class="flex padding-10" style="align-items: center;">🔆</span>
+        <div class="menu-item button button1 flex padding-16">
+          <a><i class="fa fa-map-marker"></i> Hồ Chí Minh</a>
+        </div>
+        <span class="menu-item button flex padding-16">
+          <a>
+            <i class="fa fa-user"></i>
+            Đăng nhập</a>
+        </span>
+      </div>
+      <div class="w-100 flex" style="background-color: #fff; border-radius: 8px; margin-top: 10px; justify-content: space-between;">
+        <div style="background-color: #c8d0dc; padding: 5px; border-radius: 8px 0 0 8px">
+          <i class="fa fa-shopping-cart"></i>
+        </div>
+        <form class="w-100 flex" style="align-items: center ; justify-content: flex-start;">
+          <i class="fa fa-search" style="padding:5px"></i>
+          <input id="skw" type="text" placeholder="Bạn tìm gì..." style="border:none ; outline:none; font-size: 16px;">
+        </form>
+
+        <div class="open-menu"  style=" display: block; background-color: #c8d0dc; padding: 5px;  border-radius: 0 8px 8px 0"><i class="fa fa-bars"></i><p style="font-size: 10px;">menu</p></div>
+      </div>
+    </div>
+
   </header>
-   </body>
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const header = document.querySelector('.navbar-top');
+      const main = document.querySelector('.navbar-bottom');
+      console.log(header);
+      console.log(main);
+
+      if (header && main) {
+        const headerHeight = header.offsetHeight;
+        main.style.marginTop = headerHeight + 'px';
+      }
+    });
+  </script>
+</body>
+
 </html>

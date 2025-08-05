@@ -1,1203 +1,1088 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Thegioididong.com</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <link rel="stylesheet" type="text/css" href="slick-1.8.1/slick/slick.css" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="slick-1.8.1/slick/slick-theme.css"
-    />
-  </head>
-  <body>
-    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script
-      type="text/javascript"
-      src="slick-1.8.1/slick/slick.min.js"
-    ></script>
-    <script src="js/app.js"></script>
-    <script>
-      fetch("./header.html")
-        .then((res) => res.text())
-        .then((data) => {
-          document.getElementById("header").innerHTML = data;
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thegioididong.com</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" type="text/css" href="slick-1.8.1/slick/slick.css" />
+  <link rel="stylesheet" type="text/css" href="slick-1.8.1/slick/slick-theme.css" />
+</head>
+
+<body>
+  <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script type="text/javascript" src="slick-1.8.1/slick/slick.min.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    function initSlick() {
+      if ($('.category-slider').length) {
+        $('.category-slider').slick({
+          dots: true,
+          arrows: false,
+          infinite: false,
+          slidesToShow: 5,
+          slidesToScroll: 5,
         });
-      fetch("./footer.html")
-        .then((res) => res.text())
-        .then((data) => {
-          document.getElementById("footer").innerHTML = data;
-        });
-    </script>
-    <!-- navigation bar -->
-    <div id="header"></div>
-    <!-- big banner -->
-    <div class="big-banner" style="display: flex">
-      <div class="close-bigBanner lazyloaded"></div>
-      <a
-        ><img
-          width="1200"
-          height="260"
-          src="assets/bigBanner.png"
-          alt="Laptop Tựu trường"
-      /></a>
+      }
+    }
+
+    // Load header
+    fetch("./header.html")
+      .then((res) => res.text())
+      .then((data) => {
+        document.getElementById("header").innerHTML = data;
+        const header = document.querySelector('.navbar-top');
+        const main = document.querySelector('.navbar-bottom');
+        if (header && main) {
+          const headerHeight = header.offsetHeight;
+          main.style.marginTop = headerHeight + 'px';
+        }
+        initSlick();
+      });
+
+    fetch("./footer.html")
+      .then((res) => res.text())
+      .then((data) => {
+        document.getElementById("footer").innerHTML = data;
+      });
+  </script>
+
+
+  <!-- navigation bar -->
+  <div id="header"></div>
+  <!-- big banner -->
+  <div class="big-banner" style="display: flex">
+    <div class="close-bigBanner lazyloaded"></div>
+    <a><img width="1200" height="260" src="assets/bigBanner.png" alt="Laptop Tựu trường" /></a>
+  </div>
+
+  <div class="category-slider hide-big">
+    <div class="item">
+      <img src="https://via.placeholder.com/50x50" alt="Điện thoại">
+      <p>Điện thoại</p>
     </div>
+    <div class="item">
+      <img src="https://via.placeholder.com/50x50" alt="Laptop">
+      <p>Laptop</p>
+    </div>
+    <div class="item">
+      <img src="https://via.placeholder.com/50x50" alt="Phụ kiện">
+      <p>Phụ kiện</p>
+    </div>
+    <div class="item">
+      <img src="https://via.placeholder.com/50x50" alt="Smartwatch">
+      <p>Smartwatch</p>
+    </div>
+    <div class="item">
+      <img src="https://via.placeholder.com/50x50" alt="Đồng hồ">
+      <p>Đồng hồ</p>
+    </div>
+    <div class="item">
+      <img src="https://via.placeholder.com/50x50" alt="Điện thoại">
+      <p>Điện thoại</p>
+    </div>
+    <div class="item">
+      <img src="https://via.placeholder.com/50x50" alt="Laptop">
+      <p>Laptop</p>
+    </div>
+    <div class="item">
+      <img src="https://via.placeholder.com/50x50" alt="Phụ kiện">
+      <p>Phụ kiện</p>
+    </div>
+    <div class="item">
+      <img src="https://via.placeholder.com/50x50" alt="Smartwatch">
+      <p>Smartwatch</p>
+    </div>
+    <div class="item">
+      <img src="https://via.placeholder.com/50x50" alt="Đồng hồ">
+      <p>Đồng hồ</p>
+    </div>
+  </div>
+  <script>
+    $(document).ready(function () {
+      $('.category-slider').slick({
+        dots: true,
+        arrows: false,
+        infinite: false,
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        responsive: [
+          {
+            breakpoint: 768,
+            settings: {
+              slidesToShow: 3
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 2
+            }
+          }
+        ]
+      });
+    });
+  </script>
 
-    <div class="container w-100 flex">
-      <div class="main-container w-80 flex">
-        <h3>Khuyến mãi Online</h3>
-        <ul class="products-tabs bg-white col8 flex">
-          <li class="active-tab">
-            <a href="javascript:;">
-              <img
-                data-src="https://cdnv2.tgdd.vn/mwg-static/common/Campaign/10/0d/100d3018ffd23afe20324b164d0412cc.png"
-                alt="FlashSale"
-                src="https://cdnv2.tgdd.vn/mwg-static/common/Campaign/10/0d/100d3018ffd23afe20324b164d0412cc.png"
-              />
-            </a>
-          </li>
-          <li>
-            <a href="javascript:;">
-              <img
-                data-src="https://cdnv2.tgdd.vn/mwg-static/common/Campaign/7a/e0/7ae0723d3d978fd4c8a2c77f3bf4bd3a.png"
-                alt="Online Only"
-                src="https://cdnv2.tgdd.vn/mwg-static/common/Campaign/7a/e0/7ae0723d3d978fd4c8a2c77f3bf4bd3a.png"
-              />
-            </a>
-          </li>
-          <li>
-            <a href="javascript:;">
-              <span> Điện Thoại </span>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:;">
-              <span> Apple </span>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:;">
-              <span> Laptop </span>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:;">
-              <span> Phụ Kiện </span>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:;">
-              <span> Đồng Hồ </span>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:;">
-              <span> PC, Máy in </span>
-            </a>
-          </li>
-        </ul>
+  <div class="container w-100 flex">
+    <div class="main-container w-80 flex">
+      <h3>Khuyến mãi Online</h3>
+      <ul class="products-tabs bg-white col8 flex">
+        <li class="active-tab">
+          <a href="javascript:;">
+            <img data-src="https://cdnv2.tgdd.vn/mwg-static/common/Campaign/10/0d/100d3018ffd23afe20324b164d0412cc.png"
+              alt="FlashSale"
+              src="https://cdnv2.tgdd.vn/mwg-static/common/Campaign/10/0d/100d3018ffd23afe20324b164d0412cc.png" />
+          </a>
+        </li>
+        <li>
+          <a href="javascript:;">
+            <img data-src="https://cdnv2.tgdd.vn/mwg-static/common/Campaign/7a/e0/7ae0723d3d978fd4c8a2c77f3bf4bd3a.png"
+              alt="Online Only"
+              src="https://cdnv2.tgdd.vn/mwg-static/common/Campaign/7a/e0/7ae0723d3d978fd4c8a2c77f3bf4bd3a.png" />
+          </a>
+        </li>
+        <li>
+          <a href="javascript:;">
+            <span> Điện Thoại </span>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:;">
+            <span> Apple </span>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:;">
+            <span> Laptop </span>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:;">
+            <span> Phụ Kiện </span>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:;">
+            <span> Đồng Hồ </span>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:;">
+            <span> PC, Máy in </span>
+          </a>
+        </li>
+      </ul>
 
-        <!-- thời gian sale -->
+      <!-- thời gian sale -->
 
-        <div class="timeline-title w-100 bg-white flex">
-          <div class="listing-timeline flex">
-            <div class="clock flex" style="background-color: #fea200">
-              <a style="color: white">Chỉ còn:</a
-              ><a style="color: #fff"
-                ><span id="hr">00</span>:<span id="min">23</span>:<span id="sec"
-                  >23</span
-                ></a
-              >
-              <script>
-                clock();
-              </script>
-            </div>
-            <div class="clock flex"><a>Sắp diễn ra</a><a>12:00</a></div>
-            <div class="clock flex"><a>Sắp diễn ra</a><a>15:00</a></div>
-            <div class="clock flex"><a>Sắp diễn ra</a><a>18:00</a></div>
+      <div class="timeline-title w-100 bg-white flex">
+        <div class="listing-timeline flex">
+          <div class="clock flex" style="background-color: #fea200">
+            <a style="color: white">Chỉ còn:</a><a id="clock" style="color: #fff"><span id="hr">00</span>:<span
+                id="min">23</span>:<span id="sec">23</span></a>
+            <script>
+              clock();
+            </script>
           </div>
-        </div>
-
-        <div class="product-list flex">
-          <div class="col">
-            <img
-              class="lazyloaded"
-              data-src="https://cdn.tgdd.vn/Products/Images/42/331207/samsung-galaxy-a16-green-thumb-1-600x600.jpg"
-              width="207"
-              height="207"
-              src="https://cdn.tgdd.vn/Products/Images/42/331207/samsung-galaxy-a16-green-thumb-1-600x600.jpg"
-            />
-            <h3>Samsung Galaxy A16 8GB/128GB</h3>
-            <strong class="price">
-              4.900.000₫
-              <span>
-                <label class="price-old"> 5.300.000₫ </label>
-                <small class="percent">-7%</small>
-              </span>
-            </strong>
-            <div class="fs-contain">
-              <i>Còn 2/10 suất</i>
-              <img
-                width="15"
-                height="15"
-                src="assets/flash-sale.png"
-                alt="icon flashsale"
-              />
-              <span class="rq_count fscount" style="width: 20%"> </span>
-            </div>
-
-            <div class="flashsale" style="width: 100%">
-              <b>mua ngay</b>
-            </div>
-          </div>
-
-          <div class="col">
-            <img
-              data-src="https://cdn.tgdd.vn/Products/Images/42/337744/xiaomi-redmi-note-14-pro-xanh-thumbnew-600x600.jpg"
-              class="lazyloaded"
-              alt="Xiaomi Redmi Note 14 Pro 12GB/256GB"
-              width="207"
-              height="207"
-              src="https://cdn.tgdd.vn/Products/Images/42/337744/xiaomi-redmi-note-14-pro-xanh-thumbnew-600x600.jpg"
-            />
-            <h3>Xiaomi Redmi Note 14 Pro 12GB/256GB</h3>
-            <strong class="price">
-              8.430.000₫
-              <span>
-                <label class="price-old"> 8.830.000₫ </label>
-                <small class="percent">-4%</small>
-              </span>
-            </strong>
-            <div class="fs-contain">
-              <i>Còn 6/10 suất</i>
-              <img
-                width="15"
-                height="15"
-                src="assets/flash-sale.png"
-                alt="icon flashsale"
-              />
-              <span class="rq_count fscount" style="width: 60%"> </span>
-            </div>
-
-            <div class="flashsale" style="width: 100%">
-              <b>mua ngay</b>
-            </div>
-          </div>
-
-          <div class="col">
-            <img
-              data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/312414/asus-vivobook-15-x1504za-i3-nj102w-170225-103541-756-600x600.jpg"
-              class="lazyloaded"
-              alt="Asus Vivobook 15 X1504ZA i3 1215U (NJ102W)"
-              width="207"
-              height="207"
-              src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/312414/asus-vivobook-15-x1504za-i3-nj102w-170225-103541-756-600x600.jpg"
-            />
-            <h3>Asus Vivobook 15 X1504ZA i3 1215U</h3>
-            <strong class="price">
-              9.990.000₫
-              <span>
-                <label class="price-old"> 12.090.000₫ </label>
-                <small class="percent">-17%</small>
-              </span>
-            </strong>
-            <div class="fs-contain">
-              <i>Còn 4/5 suất</i>
-              <img
-                width="15"
-                height="15"
-                src="assets/flash-sale.png"
-                alt="icon flashsale"
-              />
-              <span class="rq_count fscount" style="width: 80%"> </span>
-            </div>
-
-            <div class="flashsale" style="width: 100%">
-              <b>mua ngay</b>
-            </div>
-          </div>
-          <div class="col">
-            <img
-              data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/323325/hp-240-g10-i5-9h2e4pt-170225-105517-942-600x600.jpg"
-              class="lazyloaded"
-              alt="HP 240 G10 i5 1335U (9H2E4PT)"
-              width="207"
-              height="207"
-              src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/323325/hp-240-g10-i5-9h2e4pt-170225-105517-942-600x600.jpg"
-            />
-            <h3>HP 240 G10 i5 1335U (9H2E4PT)</h3>
-            <strong class="price">
-              16.690.000₫
-              <span>
-                <label class="price-old"> 19.190.000₫ </label>
-                <small class="percent">-13%</small>
-              </span>
-            </strong>
-            <div class="fs-contain">
-              <i>Còn 5/5 suất</i>
-              <img
-                width="15"
-                height="15"
-                src="assets/flash-sale.png"
-                alt="icon flashsale"
-              />
-              <span class="rq_count fscount" style="width: 20%"> </span>
-            </div>
-
-            <div class="flashsale" style="width: 100%">
-              <b>mua ngay</b>
-            </div>
-          </div>
-          <div class="col">
-            <img
-              data-src="https://cdn.tgdd.vn/2024/09/timerseo/326328.jpg"
-              class="ls-is-cached lazyloaded"
-              alt="FESTINA 41.5 mm Nam F6870/4"
-              width="207"
-              height="207"
-              src="https://cdn.tgdd.vn/2024/09/timerseo/326328.jpg"
-            />
-            <h3>FESTINA 41.5 mm Nam F6870/4</h3>
-            <strong class="price">
-              2.329.000₫
-              <span>
-                <label class="price-old"> 3.190.000₫ </label>
-                <small class="percent">-26%</small>
-              </span>
-            </strong>
-            <div class="fs-contain">
-              <i>Còn 5/5 suất</i>
-              <img
-                width="15"
-                height="15"
-                src="assets/flash-sale.png"
-                alt="icon flashsale"
-              />
-              <span class="rq_count fscount" style="width: 100%"> </span>
-            </div>
-
-            <div class="flashsale" style="width: 100%">
-              <b>mua ngay</b>
-            </div>
-          </div>
-          <div class="col">
-            <img
-              data-src="https://cdn.tgdd.vn/Products/Images/54/325305/tai-nghe-bluetooth-tws-ava-freego-y913-thumb-600x600.jpg"
-              class="ls-is-cached lazyloaded"
-              alt="Tai nghe TWS AVA+ FreeGo Y913"
-              width="207"
-              height="207"
-              src="https://cdn.tgdd.vn/Products/Images/54/325305/tai-nghe-bluetooth-tws-ava-freego-y913-thumb-600x600.jpg"
-            />
-            <h3>Tai nghe TWS AVA+ FreeGo Y913</h3>
-            <strong class="price">
-              230.000₫
-              <span>
-                <label class="price-old"> 390.000₫ </label>
-                <small class="percent">-41%</small>
-              </span>
-            </strong>
-            <div class="fs-contain">
-              <i>Còn 7/10 suất</i>
-              <img
-                width="15"
-                height="15"
-                src="assets/flash-sale.png"
-                alt="icon flashsale"
-              />
-              <span class="rq_count fscount" style="width: 70%"> </span>
-            </div>
-
-            <div class="flashsale" style="width: 100%">
-              <b>mua ngay</b>
-            </div>
-          </div>
-          <div class="col">
-            <img
-              data-src="https://cdn.tgdd.vn/Products/Images/42/322124/oppo-reno12-pro-thumb-600x600.jpg"
-              class="lazyloaded"
-              alt="OPPO Reno12 Pro 5G 12GB/512GB"
-              width="207"
-              height="207"
-              src="https://cdn.tgdd.vn/Products/Images/42/322124/oppo-reno12-pro-thumb-600x600.jpg"
-            />
-            <h3>OPPO Reno12 Pro 5G 12GB/512GB</h3>
-            <strong class="price">
-              13.950.000₫
-              <span>
-                <label class="price-old"> 18.650.000₫ </label>
-                <small class="percent">-25%</small>
-              </span>
-            </strong>
-            <div class="fs-contain">
-              <i>Còn 4/5 suất</i>
-              <img
-                width="15"
-                height="15"
-                src="assets/flash-sale.png"
-                alt="icon flashsale"
-              />
-              <span class="rq_count fscount" style="width: 80%"> </span>
-            </div>
-
-            <div class="flashsale" style="width: 100%">
-              <b>mua ngay</b>
-            </div>
-          </div>
-          <div class="col">
-            <img
-              data-src="https://cdn.tgdd.vn/Products/Images/522/325506/ipad-air-13-inch-m2-wifi-blue-thumb-600x600.jpg"
-              class="lazyloaded"
-              alt="iPad Air 6 M2 13 inch WiFi 128GB"
-              width="207"
-              height="207"
-              src="https://cdn.tgdd.vn/Products/Images/522/325506/ipad-air-13-inch-m2-wifi-blue-thumb-600x600.jpg"
-            />
-            <h3>iPad Air 6 M2 13 inch WiFi 128GB</h3>
-            <strong class="price">
-              17.590.000₫
-              <span>
-                <label class="price-old"> 22.090.000₫ </label>
-                <small class="percent">-20%</small>
-              </span>
-            </strong>
-            <div class="fs-contain">
-              <i>Còn 5/5 suất</i>
-              <img
-                width="15"
-                height="15"
-                src="assets/flash-sale.png"
-                alt="icon flashsale"
-              />
-              <span class="rq_count fscount" style="width: 100%"> </span>
-            </div>
-
-            <div class="flashsale" style="width: 100%">
-              <b>mua ngay</b>
-            </div>
-          </div>
-          <div class="col">
-            <img
-              data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/339680/dell-inspiron-14-5440-core-5-n5440c5u165w11ibd2-thumb-638864626346023376-600x600.jpg"
-              class="lazyloaded"
-              alt="Dell Inspiron 14 5440 Core 5 120U (N5440-C5U165W11IBD2)"
-              width="170"
-              height="170"
-              src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/339680/dell-inspiron-14-5440-core-5-n5440c5u165w11ibd2-thumb-638864626346023376-600x600.jpg"
-            />
-            <h3>Dell Inspiron 14 5440 Core 5 120U</h3>
-            <strong class="price">
-              23.990.000₫
-              <span>
-                <label class="price-old"> 26.090.000₫ </label>
-                <small class="percent">-8%</small>
-              </span>
-            </strong>
-            <div class="fs-contain">
-              <i>Còn 5/5 suất</i>
-              <img
-                width="15"
-                height="15"
-                src="assets/flash-sale.png"
-                alt="icon flashsale"
-              />
-              <span class="rq_count fscount" style="width: 100%"> </span>
-            </div>
-
-            <div class="flashsale" style="width: 100%">
-              <b>mua ngay</b>
-            </div>
-          </div>
-          <div class="col">
-            <img
-              data-src="https://cdn.tgdd.vn/2024/09/timerseo/292810.jpg"
-              class="lazyloaded"
-              alt="ELIO 35.2 mm Nữ EL127-07"
-              width="207"
-              height="207"
-              src="https://cdn.tgdd.vn/2024/09/timerseo/292810.jpg"
-            />
-            <h3>ELIO 35.2 mm Nữ EL127-07</h3>
-            <strong class="price">
-              395.000₫
-              <span>
-                <label class="price-old"> 790.000₫ </label>
-                <small class="percent">-50%</small>
-              </span>
-            </strong>
-            <div class="fs-contain">
-              <i>Còn 4/5 suất</i>
-              <img
-                width="15"
-                height="15"
-                src="assets/flash-sale.png"
-                alt="icon flashsale"
-              />
-              <span class="rq_count fscount" style="width: 80%"> </span>
-            </div>
-
-            <div class="flashsale" style="width: 100%">
-              <b>mua ngay</b>
-            </div>
-          </div>
-          <div class="col">
-            <img
-              data-src="https://cdn.tgdd.vn/Products/Images/86/310093/chuot-sac-bluetooth-zadez-m382b-thumb-1-600x600.jpg"
-              class="ls-is-cached lazyloaded"
-              alt="Chuột sạc Bluetooth Silent Zadez M382B"
-              width="207"
-              height="207"
-              src="https://cdn.tgdd.vn/Products/Images/86/310093/chuot-sac-bluetooth-zadez-m382b-thumb-1-600x600.jpg"
-            />
-            <h3>Chuột sạc Bluetooth Silent Zadez M382B</h3>
-            <strong class="price">
-              290.000₫
-              <span>
-                <label class="price-old"> 385.000₫ </label>
-                <small class="percent">-24%</small>
-              </span>
-            </strong>
-            <div class="fs-contain">
-              <i>Còn 4/5 suất</i>
-              <img
-                width="15"
-                height="15"
-                src="assets/flash-sale.png"
-                alt="icon flashsale"
-              />
-              <span class="rq_count fscount" style="width: 80%"> </span>
-            </div>
-
-            <div class="flashsale" style="width: 100%">
-              <b>mua ngay</b>
-            </div>
-          </div>
-          <div class="col">
-            <img
-              data-src="https://cdn.tgdd.vn/Products/Images/42/327254/vivo-y18-nau-thumb-600x600.jpg"
-              class="ls-is-cached lazyloaded"
-              alt="vivo Y18 4GB/128GB"
-              width="207"
-              height="207"
-              src="https://cdn.tgdd.vn/Products/Images/42/327254/vivo-y18-nau-thumb-600x600.jpg"
-            />
-            <h3>vivo Y18 4GB/128GB</h3>
-            <strong class="price">
-              3.520.000₫
-              <span>
-                <label class="price-old"> 3.920.000₫ </label>
-                <small class="percent">-10%</small>
-              </span>
-            </strong>
-            <div class="fs-contain">
-              <i>Còn 10/10 suất</i>
-              <img
-                width="15"
-                height="15"
-                src="assets/flash-sale.png"
-                alt="icon flashsale"
-              />
-              <span class="rq_count fscount" style="width: 100%"> </span>
-            </div>
-
-            <div class="flashsale" style="width: 100%">
-              <b>mua ngay</b>
-            </div>
-          </div>
-        </div>
-        <div class="readmore-btn bg-white"><i>Xem thêm sản phẩm ></i></div>
-
-        <!-- banner slider -->
-        <div class="ad-slider w-100 flex" style="margin-bottom: 20px">
-          <div class="card">
-            <img src="assets/bigBanner.png" alt="Laptop Tựu trường" />
-          </div>
-          <div class="card">
-            <img src="assets/ad1.png" />
-          </div>
-          <div class="card">
-            <img src="assets/ad2.png" />
-          </div>
-        </div>
-
-        <div class="product-list flex" style="border-radius: 10px 10px 0 0">
-          <h3 style="padding-top: 10px; font-weight: bold; font-size: 24px">
-            Gợi ý cho bạn
-          </h3>
-        </div>
-        <!-- product-list -->
-        <div class="product-list flex">
-          <div class="col">
-            <img
-              class="thumb lazyloaded"
-              data-src="https://cdn.tgdd.vn/Products/Images/522/315607/xiaomi-pad-se-xanh-thumb-600x600.jpg"
-              alt="Xiaomi Redmi Pad SE WiFi 4GB/128GB"
-              src="https://cdn.tgdd.vn/Products/Images/522/315607/xiaomi-pad-se-xanh-thumb-600x600.jpg"
-            />
-            <h3>Xiaomi Redmi Pad SE WiFi 4GB/128GB</h3>
-
-            <div class="item-compare">
-              <span>IPS LCD</span>
-              <span>11"</span>
-            </div>
-            <strong class="price">
-              4.210.000₫
-              <span>
-                <label class="price-old"> 4.410.000₫ </label>
-                <small class="percent">-7%</small>
-              </span>
-            </strong>
-            <p class="item-gift">Quà <b>700.000₫</b></p>
-            <div class="rating_Compare has_quantity">
-              <div class="vote-txt">
-                <i class="fa fa-star"></i>
-                <b>4.9</b>
-              </div>
-
-              <span>• Đã bán 26,4k</span>
-            </div>
-          </div>
-
-          <div class="col">
-            <img
-              class="thumb lazyloaded"
-              data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/326049/hp-245-g10-r5-a20tdpt-170225-110347-587-600x600.jpg"
-              alt="HP 245 G10 R5 7530U (A20TDPT)"
-              src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/326049/hp-245-g10-r5-a20tdpt-170225-110347-587-600x600.jpg"
-            />
-            <h3>HP 245 G10 R5 7530U (A20TDPT)</h3>
-            <div class="item-compare">
-              <span>RAM 8 GB</span>
-              <span>SSD 512 GB</span>
-            </div>
-            <strong class="price">
-              12.390.000₫
-              <span>
-                <label class="price-old"> 14.290.000₫ </label>
-                <small class="percent">-13%</small>
-              </span>
-            </strong>
-            <p class="item-gift">Quà <b>2.190.000₫</b></p>
-            <div class="rating_Compare has_quantity">
-              <div class="vote-txt">
-                <i class="fa fa-star"></i>
-                <b>4.9</b>
-              </div>
-
-              <span>• Đã bán 5,6k</span>
-            </div>
-          </div>
-
-          <div class="col">
-            <img
-              class="thumb lazyloaded"
-              data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/327098/hp-15-fc0085au-r5-a6vv8pa-170225-110652-878-600x600.jpg"
-              alt="HP 15 fc0085AU R5 7430U (A6VV8PA)"
-              src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/327098/hp-15-fc0085au-r5-a6vv8pa-170225-110652-878-600x600.jpg"
-            />
-            <h3>HP 15 fc0085AU R5 7430U (A6VV8PA)</h3>
-            <div class="item-compare">
-              <span>RAM 8 GB</span>
-              <span>SSD 512 GB</span>
-            </div>
-            <strong class="price">
-              13.090.000₫
-              <span>
-                <label class="price-old"> 14.890.000₫ </label>
-                <small class="percent">-12%</small>
-              </span>
-            </strong>
-            <p class="item-gift">Quà <b>2.190.000₫</b></p>
-            <div class="rating_Compare has_quantity">
-              <div class="vote-txt">
-                <i class="fa fa-star"></i>
-                <b>4.9</b>
-              </div>
-
-              <span>• Đã bán 5,6k</span>
-            </div>
-          </div>
-
-          <div class="col">
-            <img
-              class="thumb lazyloaded"
-              data-src="https://cdn.tgdd.vn/Products/Images/522/325988/redmi-pad-pro-grey-thumb-1-600x600.jpg"
-              alt="Xiaomi Redmi Pad Pro WiFi 6GB/128GB"
-              src="https://cdn.tgdd.vn/Products/Images/522/325988/redmi-pad-pro-grey-thumb-1-600x600.jpg"
-            />
-            <h3>Xiaomi Redmi Pad Pro WiFi 6GB/128GB</h3>
-            <div class="item-compare">
-              <span>IPS LCD</span>
-              <span>12.1"</span>
-            </div>
-            <strong class="price"> 7.160.000₫ </strong>
-            <p class="item-gift">Quà <b>1.000.000₫</b></p>
-            <div class="rating_Compare has_quantity">
-              <div class="vote-txt">
-                <i class="fa fa-star"></i>
-                <b>4.9</b>
-              </div>
-
-              <span>• Đã bán 16,1k</span>
-            </div>
-          </div>
-
-          <div class="col">
-            <img
-              class="thumb ls-is-cached lazyloaded"
-              data-src="https://cdn.tgdd.vn/Products/Images/7077/316003/apple-watch-se-2023-lte-vien-nhom-day-silicone-trang-tb-600x600.jpg"
-              alt="Apple Watch SE 2 GPS + Cellular 40mm viền nhôm dây thể thao"
-              src="https://cdn.tgdd.vn/Products/Images/7077/316003/apple-watch-se-2023-lte-vien-nhom-day-silicone-trang-tb-600x600.jpg"
-            />
-            <h3>Apple Watch SE 2 GPS + Cellular 40mm viền nhôm dây thể thao</h3>
-            <strong class="price">
-              6.990.000₫
-              <span>
-                <label class="price-old"> 7.190.000₫ </label>
-              </span>
-            </strong>
-            <div class="rating_Compare has_quantity">
-              <div class="vote-txt">
-                <i class="fa fa-star"></i>
-                <b>4.9</b>
-              </div>
-
-              <span>• Đã bán 1k</span>
-            </div>
-          </div>
-
-          <div class="col">
-            <img
-              class="thumb ls-is-cached lazyloaded"
-              data-src="https://cdn.tgdd.vn/Products/Images/7077/321816/mi-band-8-pro-den-tn2-1-600x600.jpg"
-              alt="Xiaomi Mi Band 8 Pro dây TPU"
-              src="https://cdn.tgdd.vn/Products/Images/7077/321816/mi-band-8-pro-den-tn2-1-600x600.jpg"
-            />
-            <h3>Xiaomi Mi Band 8 Pro dây TPU</h3>
-            <strong class="price">
-              960.000₫
-              <span>
-                <label class="price-old"> 1.760.000₫ </label>
-                <small class="percent">-45%</small>
-              </span>
-            </strong>
-            <div class="rating_Compare has_quantity">
-              <div class="vote-txt">
-                <i class="fa fa-star"></i>
-                <b>4.9</b>
-              </div>
-
-              <span>• Đã bán 8,9k</span>
-            </div>
-          </div>
-
-          <div class="col">
-            <img
-              class="thumb lazyloaded"
-              data-src="https://cdn.tgdd.vn/Products/Images/522/317623/samsung-galaxy-a9-plus-den-thumb-600x600.jpg"
-              alt="Samsung Galaxy Tab A9+ 5G 4GB/64GB"
-              src="https://cdn.tgdd.vn/Products/Images/522/317623/samsung-galaxy-a9-plus-den-thumb-600x600.jpg"
-            />
-            <h3>HP 15 fc0085AU R5 7430U (A6VV8PA)</h3>
-            <div class="item-compare">
-              <span>TFT LCD</span>
-              <span>11"</span>
-            </div>
-            <strong class="price"> 7.360.000₫ </strong>
-            <p class="item-gift">Quà <b>1.600.000₫</b></p>
-            <div class="rating_Compare has_quantity">
-              <div class="vote-txt">
-                <i class="fa fa-star"></i>
-                <b>4.9</b>
-              </div>
-
-              <span>• Đã bán 23,2k</span>
-            </div>
-          </div>
-
-          <div class="col">
-            <img
-              class="thumb lazyloaded"
-              data-src="https://cdn.tgdd.vn/Products/Images/7077/320842/dong-ho-thong-minh-xiaomi-redmi-watch-4-47-5mm-day-silicone-090124-114101-1-600x600.jpg"
-              alt="Xiaomi Redmi Watch 4 47.5mm dây silicone"
-              src="https://cdn.tgdd.vn/Products/Images/7077/320842/dong-ho-thong-minh-xiaomi-redmi-watch-4-47-5mm-day-silicone-090124-114101-1-600x600.jpg"
-            />
-            <h3>Xiaomi Redmi Watch 4 47.5mm dây silicone</h3>
-            <div class="item-compare">
-              <span>RAM 8 GB</span>
-              <span>SSD 512 GB</span>
-            </div>
-            <strong class="price">
-              13.090.000₫
-              <span>
-                <label class="price-old"> 14.890.000₫ </label>
-                <small class="percent">-12%</small>
-              </span>
-            </strong>
-            <p class="item-gift">Quà <b>2.190.000₫</b></p>
-            <div class="rating_Compare has_quantity">
-              <div class="vote-txt">
-                <i class="fa fa-star"></i>
-                <b>4.9</b>
-              </div>
-
-              <span>• Đã bán 5,6k</span>
-            </div>
-          </div>
-
-          <div class="col">
-            <img
-              class="thumb lazyloaded"
-              data-src="https://cdn.tgdd.vn/Products/Images/522/322613/oppo-pad-neo-6gb-thumb-1-600x600.jpg"
-              alt="OPPO Pad Neo WiFi 6GB/128GB"
-              src="https://cdn.tgdd.vn/Products/Images/522/322613/oppo-pad-neo-6gb-thumb-1-600x600.jpg"
-            />
-            <h3>HP 15 fc0085AU R5 7430U (A6VV8PA)</h3>
-            <div class="item-compare">
-              <span>RAM 8 GB</span>
-              <span>SSD 512 GB</span>
-            </div>
-            <strong class="price">
-              13.090.000₫
-              <span>
-                <label class="price-old"> 14.890.000₫ </label>
-                <small class="percent">-12%</small>
-              </span>
-            </strong>
-            <p class="item-gift">Quà <b>2.190.000₫</b></p>
-            <div class="rating_Compare has_quantity">
-              <div class="vote-txt">
-                <i class="fa fa-star"></i>
-                <b>4.9</b>
-              </div>
-
-              <span>• Đã bán 5,6k</span>
-            </div>
-          </div>
-
-          <div class="col">
-            <img
-              class="thumb lazyloaded"
-              data-src="https://cdn.tgdd.vn/Products/Images/7077/324733/huawei-band-9-thumb-vang-1-600x600.jpg"
-              alt="Huawei Band 9 dây cao su"
-              src="https://cdn.tgdd.vn/Products/Images/7077/324733/huawei-band-9-thumb-vang-1-600x600.jpg"
-            />
-            <h3>HP 15 fc0085AU R5 7430U (A6VV8PA)</h3>
-            <div class="item-compare">
-              <span>RAM 8 GB</span>
-              <span>SSD 512 GB</span>
-            </div>
-            <strong class="price">
-              13.090.000₫
-              <span>
-                <label class="price-old"> 14.890.000₫ </label>
-                <small class="percent">-12%</small>
-              </span>
-            </strong>
-            <p class="item-gift">Quà <b>2.190.000₫</b></p>
-            <div class="rating_Compare has_quantity">
-              <div class="vote-txt">
-                <i class="fa fa-star"></i>
-                <b>4.9</b>
-              </div>
-
-              <span>• Đã bán 5,6k</span>
-            </div>
-          </div>
-
-          <div class="col">
-            <img
-              data-src="https://cdn.tgdd.vn/Products/Images/42/320721/samsung-galaxy-z-fold6-navy-thumbn-600x600.jpg"
-              class="lazyloaded"
-              alt="Samsung Galaxy Z Fold6 5G 12GB/256GB"
-              width="207"
-              height="207"
-              src="https://cdn.tgdd.vn/Products/Images/42/320721/samsung-galaxy-z-fold6-navy-thumbn-600x600.jpg"
-            />
-            <h3>HP 15 fc0085AU R5 7430U (A6VV8PA)</h3>
-            <div class="item-compare">
-              <span>RAM 8 GB</span>
-              <span>SSD 512 GB</span>
-            </div>
-            <strong class="price">
-              13.090.000₫
-              <span>
-                <label class="price-old"> 14.890.000₫ </label>
-                <small class="percent">-12%</small>
-              </span>
-            </strong>
-            <p class="item-gift">Quà <b>2.190.000₫</b></p>
-            <div class="rating_Compare has_quantity">
-              <div class="vote-txt">
-                <i class="fa fa-star"></i>
-                <b>4.9</b>
-              </div>
-
-              <span>• Đã bán 5,6k</span>
-            </div>
-          </div>
-
-          <div class="col">
-            <img
-              class="thumb lazyloaded"
-              data-src="https://cdn.tgdd.vn/Products/Images/7077/316012/apple-watch-se-2023-vien-nhom-day-silicone-xanh-den-tb-600x600.jpg"
-              alt="Apple Watch SE 2 GPS 44mm viền nhôm dây thể thao"
-              src="https://cdn.tgdd.vn/Products/Images/7077/316012/apple-watch-se-2023-vien-nhom-day-silicone-xanh-den-tb-600x600.jpg"
-            />
-            <h3>HP 15 fc0085AU R5 7430U (A6VV8PA)</h3>
-            <div class="item-compare">
-              <span>RAM 8 GB</span>
-              <span>SSD 512 GB</span>
-            </div>
-            <strong class="price">
-              13.090.000₫
-              <span>
-                <label class="price-old"> 14.890.000₫ </label>
-                <small class="percent">-12%</small>
-              </span>
-            </strong>
-            <p class="item-gift">Quà <b>2.190.000₫</b></p>
-            <div class="rating_Compare has_quantity">
-              <div class="vote-txt">
-                <i class="fa fa-star"></i>
-                <b>4.9</b>
-              </div>
-
-              <span>• Đã bán 5,6k</span>
-            </div>
-          </div>
-        </div>
-        <div class="readmore-btn bg-white"><i>Xem thêm 12 sản phẩm </i></div>
-
-        <div class="product-list flex" style="border-radius: 10px 10px 0 0">
-          <h3 style="padding-top: 10px; font-weight: bold; font-size: 24px">
-            Sản phẩm đặc quyền
-          </h3>
-        </div>
-        <div
-          class="product-list flex"
-          id="exclusive-products-list"
-          style="border-radius: 0 0 20px 20px"
-        >
-          <img
-            style="cursor: pointer"
-            src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Banner/e8/e1/e8e182cf81dff9d70fc9017070c848c5.png"
-            alt="Sản Phẩm Đặc Quyền"
-          />
-          <div class="product-slider flex">
-            <div class="col">
-              <img
-                class="thumb lazyloaded"
-                data-src="https://cdn.tgdd.vn/Products/Images/522/322613/oppo-pad-neo-6gb-thumb-1-600x600.jpg"
-                alt="OPPO Pad Neo WiFi 6GB/128GB"
-                src="https://cdn.tgdd.vn/Products/Images/522/322613/oppo-pad-neo-6gb-thumb-1-600x600.jpg"
-              />
-              <h3>HP 15 fc0085AU R5 7430U (A6VV8PA)</h3>
-              <div class="item-compare">
-                <span>RAM 8 GB</span>
-                <span>SSD 512 GB</span>
-              </div>
-              <strong class="price">
-                13.090.000₫
-                <span>
-                  <label class="price-old"> 14.890.000₫ </label>
-                  <small class="percent">-12%</small>
-                </span>
-              </strong>
-              <p class="item-gift">Quà <b>2.190.000₫</b></p>
-              <div class="rating_Compare has_quantity">
-                <div class="vote-txt">
-                  <i class="fa fa-star"></i>
-                  <b>4.9</b>
-                </div>
-
-                <span>• Đã bán 5,6k</span>
-              </div>
-            </div>
-
-            <div class="col">
-              <img
-                class="thumb lazyloaded"
-                data-src="https://cdn.tgdd.vn/Products/Images/7077/324733/huawei-band-9-thumb-vang-1-600x600.jpg"
-                alt="Huawei Band 9 dây cao su"
-                src="https://cdn.tgdd.vn/Products/Images/7077/324733/huawei-band-9-thumb-vang-1-600x600.jpg"
-              />
-              <h3>HP 15 fc0085AU R5 7430U (A6VV8PA)</h3>
-              <div class="item-compare">
-                <span>RAM 8 GB</span>
-                <span>SSD 512 GB</span>
-              </div>
-              <strong class="price">
-                13.090.000₫
-                <span>
-                  <label class="price-old"> 14.890.000₫ </label>
-                  <small class="percent">-12%</small>
-                </span>
-              </strong>
-              <p class="item-gift">Quà <b>2.190.000₫</b></p>
-              <div class="rating_Compare has_quantity">
-                <div class="vote-txt">
-                  <i class="fa fa-star"></i>
-                  <b>4.9</b>
-                </div>
-
-                <span>• Đã bán 5,6k</span>
-              </div>
-            </div>
-
-            <div class="col">
-              <img
-                data-src="https://cdn.tgdd.vn/Products/Images/42/320721/samsung-galaxy-z-fold6-navy-thumbn-600x600.jpg"
-                class="lazyloaded"
-                alt="Samsung Galaxy Z Fold6 5G 12GB/256GB"
-                width="207"
-                height="207"
-                src="https://cdn.tgdd.vn/Products/Images/42/320721/samsung-galaxy-z-fold6-navy-thumbn-600x600.jpg"
-              />
-              <h3>HP 15 fc0085AU R5 7430U (A6VV8PA)</h3>
-              <div class="item-compare">
-                <span>RAM 8 GB</span>
-                <span>SSD 512 GB</span>
-              </div>
-              <strong class="price">
-                13.090.000₫
-                <span>
-                  <label class="price-old"> 14.890.000₫ </label>
-                  <small class="percent">-12%</small>
-                </span>
-              </strong>
-              <p class="item-gift">Quà <b>2.190.000₫</b></p>
-              <div class="rating_Compare has_quantity">
-                <div class="vote-txt">
-                  <i class="fa fa-star"></i>
-                  <b>4.9</b>
-                </div>
-
-                <span>• Đã bán 5,6k</span>
-              </div>
-            </div>
-            <div class="col">
-              <img
-                class="thumb lazyloaded"
-                data-src="https://cdn.tgdd.vn/Products/Images/522/322613/oppo-pad-neo-6gb-thumb-1-600x600.jpg"
-                alt="OPPO Pad Neo WiFi 6GB/128GB"
-                src="https://cdn.tgdd.vn/Products/Images/522/322613/oppo-pad-neo-6gb-thumb-1-600x600.jpg"
-              />
-              <h3>HP 15 fc0085AU R5 7430U (A6VV8PA)</h3>
-              <div class="item-compare">
-                <span>RAM 8 GB</span>
-                <span>SSD 512 GB</span>
-              </div>
-              <strong class="price">
-                13.090.000₫
-                <span>
-                  <label class="price-old"> 14.890.000₫ </label>
-                  <small class="percent">-12%</small>
-                </span>
-              </strong>
-              <p class="item-gift">Quà <b>2.190.000₫</b></p>
-              <div class="rating_Compare has_quantity">
-                <div class="vote-txt">
-                  <i class="fa fa-star"></i>
-                  <b>4.9</b>
-                </div>
-
-                <span>• Đã bán 5,6k</span>
-              </div>
-            </div>
-
-            <div class="col">
-              <img
-                class="thumb lazyloaded"
-                data-src="https://cdn.tgdd.vn/Products/Images/7077/316012/apple-watch-se-2023-vien-nhom-day-silicone-xanh-den-tb-600x600.jpg"
-                alt="Apple Watch SE 2 GPS 44mm viền nhôm dây thể thao"
-                src="https://cdn.tgdd.vn/Products/Images/7077/316012/apple-watch-se-2023-vien-nhom-day-silicone-xanh-den-tb-600x600.jpg"
-              />
-              <h3>HP 15 fc0085AU R5 7430U (A6VV8PA)</h3>
-              <div class="item-compare">
-                <span>RAM 8 GB</span>
-                <span>SSD 512 GB</span>
-              </div>
-              <strong class="price">
-                13.090.000₫
-                <span>
-                  <label class="price-old"> 14.890.000₫ </label>
-                  <small class="percent">-12%</small>
-                </span>
-              </strong>
-              <p class="item-gift">Quà <b>2.190.000₫</b></p>
-              <div class="rating_Compare has_quantity">
-                <div class="vote-txt">
-                  <i class="fa fa-star"></i>
-                  <b>4.9</b>
-                </div>
-
-                <span>• Đã bán 5,6k</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <h3 style="margin-top: 20px">Tuần lễ realme</h3>
-        <img
-          style="border-radius: 20px"
-          class="ls-is-cached lazyloaded"
-          alt="Tuần Lễ realme"
-          src="assets/banner.png"
-        />
-
-        <h3 style="margin-top: 20px">Gian hàng ưu đãi</h3>
-        <div class="banner-box w-100">
-          <img src="assets/banner1.png" />
-          <img src="assets/banner2.png" />
-          <img src="assets/banner3.png" />
-          <img src="assets/banner4.png" />
-        </div>
-
-        <div
-          class="product-list flex"
-          style="margin-top: 30px; border-radius: 8px 8px 0 0"
-        >
-          <h3
-            style="
-              display: block;
-              width: 100%;
-              font-size: 24px;
-              font-weight: 700;
-              line-height: 32px;
-              margin-bottom: 8px;
-            "
-          >
-            Mạng xã hội thegioididong.com
-          </h3>
-          <div class="item-section flex">
-            <div class="item-news">
-              <img
-                class="ls-is-cached lazyloaded"
-                loading="lazy"
-                data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/News/Thumb/1580953/SGAFV1638894707044001495.png"
-                alt="tin-tuc/galaxy-a17-lo-dien-smartphone-gia-re-moi-cua-samsung-voi-thiet-ke-toi-gian-pin-lon"
-                src="https://cdnv2.tgdd.vn/mwg-static/tgdd/News/Thumb/1580953/SGAFV1638894707044001495.png"
-              />
-              <p>
-                Samsung Galaxy A17 lộ diện: Thiết kế tối giản, pin lớn và màn
-                hình AMOLED
-              </p>
-            </div>
-
-            <div class="item-news">
-              <img
-                class="ls-is-cached lazyloaded"
-                loading="lazy"
-                data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/bang-gia-thay-pin-iphone-thumbnail.jpg"
-                alt="hoi-dap/bang-gia-thay-pin-iphone"
-                src="https://cdnv2.tgdd.vn/mwg-static/common/Common/bang-gia-thay-pin-iphone-thumbnail.jpg"
-              />
-              <p>
-                Bảng giá thay pin iPhone giá tốt chính hãng Apple mới nhất 2025
-              </p>
-            </div>
-            <div class="item-news">
-              <img
-                class="ls-is-cached lazyloaded"
-                loading="lazy"
-                data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/News/Thumb/1580967/ZXCV16PM1638894894446598201.png"
-                alt="tin-tuc/xiaomi-16-pro-max-ro-ri-camera-smartsens-50mp-pin-7-500mah-va-man-hinh-phu"
-                src="https://cdnv2.tgdd.vn/mwg-static/tgdd/News/Thumb/1580967/ZXCV16PM1638894894446598201.png"
-              />
-              <p>
-                Xiaomi 16 Pro Max rò rỉ cấu hình: Camera SmartSens 50MP, pin
-                7.500mAh và màn hình phụ tích hợp
-              </p>
-            </div>
-            <div class="item-news">
-              <img
-                class="ls-is-cached lazyloaded"
-                loading="lazy"
-                data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/bang-gia-thay-pin-iphone-11-thumbnail.jpg"
-                alt="hoi-dap/bang-gia-thay-pin-iphone-11"
-                src="https://cdnv2.tgdd.vn/mwg-static/common/Common/bang-gia-thay-pin-iphone-11-thumbnail.jpg"
-              />
-              <p>
-                Xiaomi 16 Pro Max rò rỉ cấu hình: Camera SmartSens 50MP, pin
-                7.500mAh và màn hình phụ tích hợp
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="readmore-btn bg-white"><i>Xem thêm ></i></div>
-
-        <div
-          class="product-list flex"
-          style="margin-top: 30px; border-radius: 8px 8px 0 0"
-        >
-          <h3
-            style="
-              display: block;
-              width: 100%;
-              font-size: 24px;
-              font-weight: 700;
-              line-height: 32px;
-              margin-bottom: 8px;
-            "
-          >
-            Mọi người cũng tìm kiếm
-          </h3>
-
-          <ul>
-            <li>iphone 16</li>
-            <li>iphone 16 pro</li>
-            <li>iphone 16 pro max</li>
-            <li>Samsung Galaxy Tab S9</li>
-            <li>Lenovo Tab M11</li>
-            <li>iphone 15</li>
-            <li>iphone 15 plus</li>
-            <li>samsung z flip 7</li>
-            <li>tai nghe airpods</li>
-            <li>airpods 4</li>
-            <li>airpods 4 anc</li>
-            <li>apple watch series 10</li>
-            <li>apple watch series 9</li>
-            <li>apple watch ultra 2</li>
-            <li>asus</li>
-            <li>laptop gaming</li>
-            <li>macbook air</li>
-            <li>macbook pro</li>
-            <li>Mac Studio M4</li>
-            <li>MacBook Air M4</li>
-            <li>airtag</li>
-            <li>loa jbl</li>
-            <li>tai nghe sony</li>
-            <li>loa marshall</li>
-            <li>bàn phím gaming</li>
-            <li>chuột logitech</li>
-            <li>loa harman kardon</li>
-            <li>đồng hồ g shock</li>
-            <li>galaxy watch 8</li>
-            <li>samsung galaxy z series</li>
-            <li>galaxy watch ultra 2025</li>
-            <li>đồng hồ thụy sỹ</li>
-            <li>galaxy watch 8 classic</li>
-            <li>macbook</li>
-            <li>macbook pro m4</li>
-            <li>samsung s25</li>
-            <li>samsung s25 plus</li>
-            <li>samsung galaxy s25 ultra</li>
-            <li>iphone 16e</li>
-            <li>iphone 14</li>
-            <li>samsung galaxy z fold 7</li>
-          </ul>
+          <div class="clock flex"><a>Sắp diễn ra</a><a>12:00</a></div>
+          <div class="clock flex"><a>Sắp diễn ra</a><a>15:00</a></div>
+          <div class="clock flex"><a>Sắp diễn ra</a><a>18:00</a></div>
         </div>
       </div>
+
+      <div class="product-list flex">
+        <div class="col">
+          <img class="lazyloaded"
+            data-src="https://cdn.tgdd.vn/Products/Images/42/331207/samsung-galaxy-a16-green-thumb-1-600x600.jpg"
+            width="207" height="207"
+            src="https://cdn.tgdd.vn/Products/Images/42/331207/samsung-galaxy-a16-green-thumb-1-600x600.jpg" />
+          <h3>Samsung Galaxy A16 8GB/128GB</h3>
+          <strong class="price">
+            4.900.000₫
+            <span>
+              <label class="price-old"> 5.300.000₫ </label>
+              <small class="percent">-7%</small>
+            </span>
+          </strong>
+          <div class="fs-contain">
+            <i>Còn 2/10 suất</i>
+            <img width="15" height="15" src="assets/flash-sale.png" alt="icon flashsale" />
+            <span class="rq_count fscount" style="width: 20%"> </span>
+          </div>
+
+          <div class="flashsale" style="width: 100%">
+            <b>mua ngay</b>
+          </div>
+        </div>
+
+        <div class="col">
+          <img
+            data-src="https://cdn.tgdd.vn/Products/Images/42/337744/xiaomi-redmi-note-14-pro-xanh-thumbnew-600x600.jpg"
+            class="lazyloaded" alt="Xiaomi Redmi Note 14 Pro 12GB/256GB" width="207" height="207"
+            src="https://cdn.tgdd.vn/Products/Images/42/337744/xiaomi-redmi-note-14-pro-xanh-thumbnew-600x600.jpg" />
+          <h3>Xiaomi Redmi Note 14 Pro 12GB/256GB</h3>
+          <strong class="price">
+            8.430.000₫
+            <span>
+              <label class="price-old"> 8.830.000₫ </label>
+              <small class="percent">-4%</small>
+            </span>
+          </strong>
+          <div class="fs-contain">
+            <i>Còn 6/10 suất</i>
+            <img width="15" height="15" src="assets/flash-sale.png" alt="icon flashsale" />
+            <span class="rq_count fscount" style="width: 60%"> </span>
+          </div>
+
+          <div class="flashsale" style="width: 100%">
+            <b>mua ngay</b>
+          </div>
+        </div>
+
+        <div class="col">
+          <img
+            data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/312414/asus-vivobook-15-x1504za-i3-nj102w-170225-103541-756-600x600.jpg"
+            class="lazyloaded" alt="Asus Vivobook 15 X1504ZA i3 1215U (NJ102W)" width="207" height="207"
+            src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/312414/asus-vivobook-15-x1504za-i3-nj102w-170225-103541-756-600x600.jpg" />
+          <h3>Asus Vivobook 15 X1504ZA i3 1215U</h3>
+          <strong class="price">
+            9.990.000₫
+            <span>
+              <label class="price-old"> 12.090.000₫ </label>
+              <small class="percent">-17%</small>
+            </span>
+          </strong>
+          <div class="fs-contain">
+            <i>Còn 4/5 suất</i>
+            <img width="15" height="15" src="assets/flash-sale.png" alt="icon flashsale" />
+            <span class="rq_count fscount" style="width: 80%"> </span>
+          </div>
+
+          <div class="flashsale" style="width: 100%">
+            <b>mua ngay</b>
+          </div>
+        </div>
+        <div class="col">
+          <img
+            data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/323325/hp-240-g10-i5-9h2e4pt-170225-105517-942-600x600.jpg"
+            class="lazyloaded" alt="HP 240 G10 i5 1335U (9H2E4PT)" width="207" height="207"
+            src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/323325/hp-240-g10-i5-9h2e4pt-170225-105517-942-600x600.jpg" />
+          <h3>HP 240 G10 i5 1335U (9H2E4PT)</h3>
+          <strong class="price">
+            16.690.000₫
+            <span>
+              <label class="price-old"> 19.190.000₫ </label>
+              <small class="percent">-13%</small>
+            </span>
+          </strong>
+          <div class="fs-contain">
+            <i>Còn 5/5 suất</i>
+            <img width="15" height="15" src="assets/flash-sale.png" alt="icon flashsale" />
+            <span class="rq_count fscount" style="width: 20%"> </span>
+          </div>
+
+          <div class="flashsale" style="width: 100%">
+            <b>mua ngay</b>
+          </div>
+        </div>
+        <div class="col">
+          <img data-src="https://cdn.tgdd.vn/2024/09/timerseo/326328.jpg" class="ls-is-cached lazyloaded"
+            alt="FESTINA 41.5 mm Nam F6870/4" width="207" height="207"
+            src="https://cdn.tgdd.vn/2024/09/timerseo/326328.jpg" />
+          <h3>FESTINA 41.5 mm Nam F6870/4</h3>
+          <strong class="price">
+            2.329.000₫
+            <span>
+              <label class="price-old"> 3.190.000₫ </label>
+              <small class="percent">-26%</small>
+            </span>
+          </strong>
+          <div class="fs-contain">
+            <i>Còn 5/5 suất</i>
+            <img width="15" height="15" src="assets/flash-sale.png" alt="icon flashsale" />
+            <span class="rq_count fscount" style="width: 100%"> </span>
+          </div>
+
+          <div class="flashsale" style="width: 100%">
+            <b>mua ngay</b>
+          </div>
+        </div>
+        <div class="col">
+          <img
+            data-src="https://cdn.tgdd.vn/Products/Images/54/325305/tai-nghe-bluetooth-tws-ava-freego-y913-thumb-600x600.jpg"
+            class="ls-is-cached lazyloaded" alt="Tai nghe TWS AVA+ FreeGo Y913" width="207" height="207"
+            src="https://cdn.tgdd.vn/Products/Images/54/325305/tai-nghe-bluetooth-tws-ava-freego-y913-thumb-600x600.jpg" />
+          <h3>Tai nghe TWS AVA+ FreeGo Y913</h3>
+          <strong class="price">
+            230.000₫
+            <span>
+              <label class="price-old"> 390.000₫ </label>
+              <small class="percent">-41%</small>
+            </span>
+          </strong>
+          <div class="fs-contain">
+            <i>Còn 7/10 suất</i>
+            <img width="15" height="15" src="assets/flash-sale.png" alt="icon flashsale" />
+            <span class="rq_count fscount" style="width: 70%"> </span>
+          </div>
+
+          <div class="flashsale" style="width: 100%">
+            <b>mua ngay</b>
+          </div>
+        </div>
+        <div class="col">
+          <img data-src="https://cdn.tgdd.vn/Products/Images/42/322124/oppo-reno12-pro-thumb-600x600.jpg"
+            class="lazyloaded" alt="OPPO Reno12 Pro 5G 12GB/512GB" width="207" height="207"
+            src="https://cdn.tgdd.vn/Products/Images/42/322124/oppo-reno12-pro-thumb-600x600.jpg" />
+          <h3>OPPO Reno12 Pro 5G 12GB/512GB</h3>
+          <strong class="price">
+            13.950.000₫
+            <span>
+              <label class="price-old"> 18.650.000₫ </label>
+              <small class="percent">-25%</small>
+            </span>
+          </strong>
+          <div class="fs-contain">
+            <i>Còn 4/5 suất</i>
+            <img width="15" height="15" src="assets/flash-sale.png" alt="icon flashsale" />
+            <span class="rq_count fscount" style="width: 80%"> </span>
+          </div>
+
+          <div class="flashsale" style="width: 100%">
+            <b>mua ngay</b>
+          </div>
+        </div>
+        <div class="col">
+          <img data-src="https://cdn.tgdd.vn/Products/Images/522/325506/ipad-air-13-inch-m2-wifi-blue-thumb-600x600.jpg"
+            class="lazyloaded" alt="iPad Air 6 M2 13 inch WiFi 128GB" width="207" height="207"
+            src="https://cdn.tgdd.vn/Products/Images/522/325506/ipad-air-13-inch-m2-wifi-blue-thumb-600x600.jpg" />
+          <h3>iPad Air 6 M2 13 inch WiFi 128GB</h3>
+          <strong class="price">
+            17.590.000₫
+            <span>
+              <label class="price-old"> 22.090.000₫ </label>
+              <small class="percent">-20%</small>
+            </span>
+          </strong>
+          <div class="fs-contain">
+            <i>Còn 5/5 suất</i>
+            <img width="15" height="15" src="assets/flash-sale.png" alt="icon flashsale" />
+            <span class="rq_count fscount" style="width: 100%"> </span>
+          </div>
+
+          <div class="flashsale" style="width: 100%">
+            <b>mua ngay</b>
+          </div>
+        </div>
+        <div class="col">
+          <img
+            data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/339680/dell-inspiron-14-5440-core-5-n5440c5u165w11ibd2-thumb-638864626346023376-600x600.jpg"
+            class="lazyloaded" alt="Dell Inspiron 14 5440 Core 5 120U (N5440-C5U165W11IBD2)" width="170" height="170"
+            src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/339680/dell-inspiron-14-5440-core-5-n5440c5u165w11ibd2-thumb-638864626346023376-600x600.jpg" />
+          <h3>Dell Inspiron 14 5440 Core 5 120U</h3>
+          <strong class="price">
+            23.990.000₫
+            <span>
+              <label class="price-old"> 26.090.000₫ </label>
+              <small class="percent">-8%</small>
+            </span>
+          </strong>
+          <div class="fs-contain">
+            <i>Còn 5/5 suất</i>
+            <img width="15" height="15" src="assets/flash-sale.png" alt="icon flashsale" />
+            <span class="rq_count fscount" style="width: 100%"> </span>
+          </div>
+
+          <div class="flashsale" style="width: 100%">
+            <b>mua ngay</b>
+          </div>
+        </div>
+        <div class="col">
+          <img data-src="https://cdn.tgdd.vn/2024/09/timerseo/292810.jpg" class="lazyloaded"
+            alt="ELIO 35.2 mm Nữ EL127-07" width="207" height="207"
+            src="https://cdn.tgdd.vn/2024/09/timerseo/292810.jpg" />
+          <h3>ELIO 35.2 mm Nữ EL127-07</h3>
+          <strong class="price">
+            395.000₫
+            <span>
+              <label class="price-old"> 790.000₫ </label>
+              <small class="percent">-50%</small>
+            </span>
+          </strong>
+          <div class="fs-contain">
+            <i>Còn 4/5 suất</i>
+            <img width="15" height="15" src="assets/flash-sale.png" alt="icon flashsale" />
+            <span class="rq_count fscount" style="width: 80%"> </span>
+          </div>
+
+          <div class="flashsale" style="width: 100%">
+            <b>mua ngay</b>
+          </div>
+        </div>
+        <div class="col">
+          <img
+            data-src="https://cdn.tgdd.vn/Products/Images/86/310093/chuot-sac-bluetooth-zadez-m382b-thumb-1-600x600.jpg"
+            class="ls-is-cached lazyloaded" alt="Chuột sạc Bluetooth Silent Zadez M382B" width="207" height="207"
+            src="https://cdn.tgdd.vn/Products/Images/86/310093/chuot-sac-bluetooth-zadez-m382b-thumb-1-600x600.jpg" />
+          <h3>Chuột sạc Bluetooth Silent Zadez M382B</h3>
+          <strong class="price">
+            290.000₫
+            <span>
+              <label class="price-old"> 385.000₫ </label>
+              <small class="percent">-24%</small>
+            </span>
+          </strong>
+          <div class="fs-contain">
+            <i>Còn 4/5 suất</i>
+            <img width="15" height="15" src="assets/flash-sale.png" alt="icon flashsale" />
+            <span class="rq_count fscount" style="width: 80%"> </span>
+          </div>
+
+          <div class="flashsale" style="width: 100%">
+            <b>mua ngay</b>
+          </div>
+        </div>
+        <div class="col">
+          <img data-src="https://cdn.tgdd.vn/Products/Images/42/327254/vivo-y18-nau-thumb-600x600.jpg"
+            class="ls-is-cached lazyloaded" alt="vivo Y18 4GB/128GB" width="207" height="207"
+            src="https://cdn.tgdd.vn/Products/Images/42/327254/vivo-y18-nau-thumb-600x600.jpg" />
+          <h3>vivo Y18 4GB/128GB</h3>
+          <strong class="price">
+            3.520.000₫
+            <span>
+              <label class="price-old"> 3.920.000₫ </label>
+              <small class="percent">-10%</small>
+            </span>
+          </strong>
+          <div class="fs-contain">
+            <i>Còn 10/10 suất</i>
+            <img width="15" height="15" src="assets/flash-sale.png" alt="icon flashsale" />
+            <span class="rq_count fscount" style="width: 100%"> </span>
+          </div>
+
+          <div class="flashsale" style="width: 100%">
+            <b>mua ngay</b>
+          </div>
+        </div>
+      </div>
+      <div class="readmore-btn bg-white"><i>Xem thêm sản phẩm ></i></div>
+
+      <!-- banner slider -->
+      <div class="ad-slider w-100 flex" style="margin-bottom: 20px">
+        <div class="card">
+          <img src="assets/bigBanner.png" alt="Laptop Tựu trường" />
+        </div>
+        <div class="card">
+          <img src="assets/ad1.png" />
+        </div>
+        <div class="card">
+          <img src="assets/ad2.png" />
+        </div>
+      </div>
+
+      <div class="product-list flex" style="border-radius: 10px 10px 0 0">
+        <h3 style="padding-top: 10px; font-weight: bold; font-size: 24px">
+          Gợi ý cho bạn
+        </h3>
+      </div>
+      <!-- product-list -->
+      <div class="product-list flex">
+        <div class="col">
+          <img class="thumb lazyloaded"
+            data-src="https://cdn.tgdd.vn/Products/Images/522/315607/xiaomi-pad-se-xanh-thumb-600x600.jpg"
+            alt="Xiaomi Redmi Pad SE WiFi 4GB/128GB"
+            src="https://cdn.tgdd.vn/Products/Images/522/315607/xiaomi-pad-se-xanh-thumb-600x600.jpg" />
+          <h3>Xiaomi Redmi Pad SE WiFi 4GB/128GB</h3>
+
+          <div class="item-compare">
+            <span>IPS LCD</span>
+            <span>11"</span>
+          </div>
+          <strong class="price">
+            4.210.000₫
+            <span>
+              <label class="price-old"> 4.410.000₫ </label>
+              <small class="percent">-7%</small>
+            </span>
+          </strong>
+          <p class="item-gift">Quà <b>700.000₫</b></p>
+          <div class="rating_Compare has_quantity">
+            <div class="vote-txt">
+              <i class="fa fa-star"></i>
+              <b>4.9</b>
+            </div>
+
+            <span>• Đã bán 26,4k</span>
+          </div>
+        </div>
+
+        <div class="col">
+          <img class="thumb lazyloaded"
+            data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/326049/hp-245-g10-r5-a20tdpt-170225-110347-587-600x600.jpg"
+            alt="HP 245 G10 R5 7530U (A20TDPT)"
+            src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/326049/hp-245-g10-r5-a20tdpt-170225-110347-587-600x600.jpg" />
+          <h3>HP 245 G10 R5 7530U (A20TDPT)</h3>
+          <div class="item-compare">
+            <span>RAM 8 GB</span>
+            <span>SSD 512 GB</span>
+          </div>
+          <strong class="price">
+            12.390.000₫
+            <span>
+              <label class="price-old"> 14.290.000₫ </label>
+              <small class="percent">-13%</small>
+            </span>
+          </strong>
+          <p class="item-gift">Quà <b>2.190.000₫</b></p>
+          <div class="rating_Compare has_quantity">
+            <div class="vote-txt">
+              <i class="fa fa-star"></i>
+              <b>4.9</b>
+            </div>
+
+            <span>• Đã bán 5,6k</span>
+          </div>
+        </div>
+
+        <div class="col">
+          <img class="thumb lazyloaded"
+            data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/327098/hp-15-fc0085au-r5-a6vv8pa-170225-110652-878-600x600.jpg"
+            alt="HP 15 fc0085AU R5 7430U (A6VV8PA)"
+            src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/327098/hp-15-fc0085au-r5-a6vv8pa-170225-110652-878-600x600.jpg" />
+          <h3>HP 15 fc0085AU R5 7430U (A6VV8PA)</h3>
+          <div class="item-compare">
+            <span>RAM 8 GB</span>
+            <span>SSD 512 GB</span>
+          </div>
+          <strong class="price">
+            13.090.000₫
+            <span>
+              <label class="price-old"> 14.890.000₫ </label>
+              <small class="percent">-12%</small>
+            </span>
+          </strong>
+          <p class="item-gift">Quà <b>2.190.000₫</b></p>
+          <div class="rating_Compare has_quantity">
+            <div class="vote-txt">
+              <i class="fa fa-star"></i>
+              <b>4.9</b>
+            </div>
+
+            <span>• Đã bán 5,6k</span>
+          </div>
+        </div>
+
+        <div class="col">
+          <img class="thumb lazyloaded"
+            data-src="https://cdn.tgdd.vn/Products/Images/522/325988/redmi-pad-pro-grey-thumb-1-600x600.jpg"
+            alt="Xiaomi Redmi Pad Pro WiFi 6GB/128GB"
+            src="https://cdn.tgdd.vn/Products/Images/522/325988/redmi-pad-pro-grey-thumb-1-600x600.jpg" />
+          <h3>Xiaomi Redmi Pad Pro WiFi 6GB/128GB</h3>
+          <div class="item-compare">
+            <span>IPS LCD</span>
+            <span>12.1"</span>
+          </div>
+          <strong class="price"> 7.160.000₫ </strong>
+          <p class="item-gift">Quà <b>1.000.000₫</b></p>
+          <div class="rating_Compare has_quantity">
+            <div class="vote-txt">
+              <i class="fa fa-star"></i>
+              <b>4.9</b>
+            </div>
+
+            <span>• Đã bán 16,1k</span>
+          </div>
+        </div>
+
+        <div class="col">
+          <img class="thumb ls-is-cached lazyloaded"
+            data-src="https://cdn.tgdd.vn/Products/Images/7077/316003/apple-watch-se-2023-lte-vien-nhom-day-silicone-trang-tb-600x600.jpg"
+            alt="Apple Watch SE 2 GPS + Cellular 40mm viền nhôm dây thể thao"
+            src="https://cdn.tgdd.vn/Products/Images/7077/316003/apple-watch-se-2023-lte-vien-nhom-day-silicone-trang-tb-600x600.jpg" />
+          <h3>Apple Watch SE 2 GPS + Cellular 40mm viền nhôm dây thể thao</h3>
+          <strong class="price">
+            6.990.000₫
+            <span>
+              <label class="price-old"> 7.190.000₫ </label>
+            </span>
+          </strong>
+          <div class="rating_Compare has_quantity">
+            <div class="vote-txt">
+              <i class="fa fa-star"></i>
+              <b>4.9</b>
+            </div>
+
+            <span>• Đã bán 1k</span>
+          </div>
+        </div>
+
+        <div class="col">
+          <img class="thumb ls-is-cached lazyloaded"
+            data-src="https://cdn.tgdd.vn/Products/Images/7077/321816/mi-band-8-pro-den-tn2-1-600x600.jpg"
+            alt="Xiaomi Mi Band 8 Pro dây TPU"
+            src="https://cdn.tgdd.vn/Products/Images/7077/321816/mi-band-8-pro-den-tn2-1-600x600.jpg" />
+          <h3>Xiaomi Mi Band 8 Pro dây TPU</h3>
+          <strong class="price">
+            960.000₫
+            <span>
+              <label class="price-old"> 1.760.000₫ </label>
+              <small class="percent">-45%</small>
+            </span>
+          </strong>
+          <div class="rating_Compare has_quantity">
+            <div class="vote-txt">
+              <i class="fa fa-star"></i>
+              <b>4.9</b>
+            </div>
+
+            <span>• Đã bán 8,9k</span>
+          </div>
+        </div>
+
+        <div class="col">
+          <img class="thumb lazyloaded"
+            data-src="https://cdn.tgdd.vn/Products/Images/522/317623/samsung-galaxy-a9-plus-den-thumb-600x600.jpg"
+            alt="Samsung Galaxy Tab A9+ 5G 4GB/64GB"
+            src="https://cdn.tgdd.vn/Products/Images/522/317623/samsung-galaxy-a9-plus-den-thumb-600x600.jpg" />
+          <h3>HP 15 fc0085AU R5 7430U (A6VV8PA)</h3>
+          <div class="item-compare">
+            <span>TFT LCD</span>
+            <span>11"</span>
+          </div>
+          <strong class="price"> 7.360.000₫ </strong>
+          <p class="item-gift">Quà <b>1.600.000₫</b></p>
+          <div class="rating_Compare has_quantity">
+            <div class="vote-txt">
+              <i class="fa fa-star"></i>
+              <b>4.9</b>
+            </div>
+
+            <span>• Đã bán 23,2k</span>
+          </div>
+        </div>
+
+        <div class="col">
+          <img class="thumb lazyloaded"
+            data-src="https://cdn.tgdd.vn/Products/Images/7077/320842/dong-ho-thong-minh-xiaomi-redmi-watch-4-47-5mm-day-silicone-090124-114101-1-600x600.jpg"
+            alt="Xiaomi Redmi Watch 4 47.5mm dây silicone"
+            src="https://cdn.tgdd.vn/Products/Images/7077/320842/dong-ho-thong-minh-xiaomi-redmi-watch-4-47-5mm-day-silicone-090124-114101-1-600x600.jpg" />
+          <h3>Xiaomi Redmi Watch 4 47.5mm dây silicone</h3>
+          <div class="item-compare">
+            <span>RAM 8 GB</span>
+            <span>SSD 512 GB</span>
+          </div>
+          <strong class="price">
+            13.090.000₫
+            <span>
+              <label class="price-old"> 14.890.000₫ </label>
+              <small class="percent">-12%</small>
+            </span>
+          </strong>
+          <p class="item-gift">Quà <b>2.190.000₫</b></p>
+          <div class="rating_Compare has_quantity">
+            <div class="vote-txt">
+              <i class="fa fa-star"></i>
+              <b>4.9</b>
+            </div>
+
+            <span>• Đã bán 5,6k</span>
+          </div>
+        </div>
+
+        <div class="col">
+          <img class="thumb lazyloaded"
+            data-src="https://cdn.tgdd.vn/Products/Images/522/322613/oppo-pad-neo-6gb-thumb-1-600x600.jpg"
+            alt="OPPO Pad Neo WiFi 6GB/128GB"
+            src="https://cdn.tgdd.vn/Products/Images/522/322613/oppo-pad-neo-6gb-thumb-1-600x600.jpg" />
+          <h3>HP 15 fc0085AU R5 7430U (A6VV8PA)</h3>
+          <div class="item-compare">
+            <span>RAM 8 GB</span>
+            <span>SSD 512 GB</span>
+          </div>
+          <strong class="price">
+            13.090.000₫
+            <span>
+              <label class="price-old"> 14.890.000₫ </label>
+              <small class="percent">-12%</small>
+            </span>
+          </strong>
+          <p class="item-gift">Quà <b>2.190.000₫</b></p>
+          <div class="rating_Compare has_quantity">
+            <div class="vote-txt">
+              <i class="fa fa-star"></i>
+              <b>4.9</b>
+            </div>
+
+            <span>• Đã bán 5,6k</span>
+          </div>
+        </div>
+
+        <div class="col">
+          <img class="thumb lazyloaded"
+            data-src="https://cdn.tgdd.vn/Products/Images/7077/324733/huawei-band-9-thumb-vang-1-600x600.jpg"
+            alt="Huawei Band 9 dây cao su"
+            src="https://cdn.tgdd.vn/Products/Images/7077/324733/huawei-band-9-thumb-vang-1-600x600.jpg" />
+          <h3>HP 15 fc0085AU R5 7430U (A6VV8PA)</h3>
+          <div class="item-compare">
+            <span>RAM 8 GB</span>
+            <span>SSD 512 GB</span>
+          </div>
+          <strong class="price">
+            13.090.000₫
+            <span>
+              <label class="price-old"> 14.890.000₫ </label>
+              <small class="percent">-12%</small>
+            </span>
+          </strong>
+          <p class="item-gift">Quà <b>2.190.000₫</b></p>
+          <div class="rating_Compare has_quantity">
+            <div class="vote-txt">
+              <i class="fa fa-star"></i>
+              <b>4.9</b>
+            </div>
+
+            <span>• Đã bán 5,6k</span>
+          </div>
+        </div>
+
+        <div class="col">
+          <img data-src="https://cdn.tgdd.vn/Products/Images/42/320721/samsung-galaxy-z-fold6-navy-thumbn-600x600.jpg"
+            class="lazyloaded" alt="Samsung Galaxy Z Fold6 5G 12GB/256GB" width="207" height="207"
+            src="https://cdn.tgdd.vn/Products/Images/42/320721/samsung-galaxy-z-fold6-navy-thumbn-600x600.jpg" />
+          <h3>HP 15 fc0085AU R5 7430U (A6VV8PA)</h3>
+          <div class="item-compare">
+            <span>RAM 8 GB</span>
+            <span>SSD 512 GB</span>
+          </div>
+          <strong class="price">
+            13.090.000₫
+            <span>
+              <label class="price-old"> 14.890.000₫ </label>
+              <small class="percent">-12%</small>
+            </span>
+          </strong>
+          <p class="item-gift">Quà <b>2.190.000₫</b></p>
+          <div class="rating_Compare has_quantity">
+            <div class="vote-txt">
+              <i class="fa fa-star"></i>
+              <b>4.9</b>
+            </div>
+
+            <span>• Đã bán 5,6k</span>
+          </div>
+        </div>
+
+        <div class="col">
+          <img class="thumb lazyloaded"
+            data-src="https://cdn.tgdd.vn/Products/Images/7077/316012/apple-watch-se-2023-vien-nhom-day-silicone-xanh-den-tb-600x600.jpg"
+            alt="Apple Watch SE 2 GPS 44mm viền nhôm dây thể thao"
+            src="https://cdn.tgdd.vn/Products/Images/7077/316012/apple-watch-se-2023-vien-nhom-day-silicone-xanh-den-tb-600x600.jpg" />
+          <h3>HP 15 fc0085AU R5 7430U (A6VV8PA)</h3>
+          <div class="item-compare">
+            <span>RAM 8 GB</span>
+            <span>SSD 512 GB</span>
+          </div>
+          <strong class="price">
+            13.090.000₫
+            <span>
+              <label class="price-old"> 14.890.000₫ </label>
+              <small class="percent">-12%</small>
+            </span>
+          </strong>
+          <p class="item-gift">Quà <b>2.190.000₫</b></p>
+          <div class="rating_Compare has_quantity">
+            <div class="vote-txt">
+              <i class="fa fa-star"></i>
+              <b>4.9</b>
+            </div>
+
+            <span>• Đã bán 5,6k</span>
+          </div>
+        </div>
+      </div>
+      <div class="readmore-btn bg-white"><i>Xem thêm 12 sản phẩm </i></div>
+
+      <div class="product-list flex" style="border-radius: 10px 10px 0 0">
+        <h3 style="padding-top: 10px; font-weight: bold; font-size: 24px">
+          Sản phẩm đặc quyền
+        </h3>
+      </div>
+      <div class="product-list flex" id="exclusive-products-list" style="border-radius: 0 0 20px 20px">
+        <img style="cursor: pointer"
+          src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Banner/e8/e1/e8e182cf81dff9d70fc9017070c848c5.png"
+          alt="Sản Phẩm Đặc Quyền" />
+        <div class="product-slider flex">
+          <div class="col">
+            <img class="thumb lazyloaded"
+              data-src="https://cdn.tgdd.vn/Products/Images/522/322613/oppo-pad-neo-6gb-thumb-1-600x600.jpg"
+              alt="OPPO Pad Neo WiFi 6GB/128GB"
+              src="https://cdn.tgdd.vn/Products/Images/522/322613/oppo-pad-neo-6gb-thumb-1-600x600.jpg" />
+            <h3>HP 15 fc0085AU R5 7430U (A6VV8PA)</h3>
+            <div class="item-compare">
+              <span>RAM 8 GB</span>
+              <span>SSD 512 GB</span>
+            </div>
+            <strong class="price">
+              13.090.000₫
+              <span>
+                <label class="price-old"> 14.890.000₫ </label>
+                <small class="percent">-12%</small>
+              </span>
+            </strong>
+            <p class="item-gift">Quà <b>2.190.000₫</b></p>
+            <div class="rating_Compare has_quantity">
+              <div class="vote-txt">
+                <i class="fa fa-star"></i>
+                <b>4.9</b>
+              </div>
+
+              <span>• Đã bán 5,6k</span>
+            </div>
+          </div>
+
+          <div class="col">
+            <img class="thumb lazyloaded"
+              data-src="https://cdn.tgdd.vn/Products/Images/7077/324733/huawei-band-9-thumb-vang-1-600x600.jpg"
+              alt="Huawei Band 9 dây cao su"
+              src="https://cdn.tgdd.vn/Products/Images/7077/324733/huawei-band-9-thumb-vang-1-600x600.jpg" />
+            <h3>HP 15 fc0085AU R5 7430U (A6VV8PA)</h3>
+            <div class="item-compare">
+              <span>RAM 8 GB</span>
+              <span>SSD 512 GB</span>
+            </div>
+            <strong class="price">
+              13.090.000₫
+              <span>
+                <label class="price-old"> 14.890.000₫ </label>
+                <small class="percent">-12%</small>
+              </span>
+            </strong>
+            <p class="item-gift">Quà <b>2.190.000₫</b></p>
+            <div class="rating_Compare has_quantity">
+              <div class="vote-txt">
+                <i class="fa fa-star"></i>
+                <b>4.9</b>
+              </div>
+
+              <span>• Đã bán 5,6k</span>
+            </div>
+          </div>
+
+          <div class="col">
+            <img data-src="https://cdn.tgdd.vn/Products/Images/42/320721/samsung-galaxy-z-fold6-navy-thumbn-600x600.jpg"
+              class="lazyloaded" alt="Samsung Galaxy Z Fold6 5G 12GB/256GB" width="207" height="207"
+              src="https://cdn.tgdd.vn/Products/Images/42/320721/samsung-galaxy-z-fold6-navy-thumbn-600x600.jpg" />
+            <h3>HP 15 fc0085AU R5 7430U (A6VV8PA)</h3>
+            <div class="item-compare">
+              <span>RAM 8 GB</span>
+              <span>SSD 512 GB</span>
+            </div>
+            <strong class="price">
+              13.090.000₫
+              <span>
+                <label class="price-old"> 14.890.000₫ </label>
+                <small class="percent">-12%</small>
+              </span>
+            </strong>
+            <p class="item-gift">Quà <b>2.190.000₫</b></p>
+            <div class="rating_Compare has_quantity">
+              <div class="vote-txt">
+                <i class="fa fa-star"></i>
+                <b>4.9</b>
+              </div>
+
+              <span>• Đã bán 5,6k</span>
+            </div>
+          </div>
+          <div class="col">
+            <img class="thumb lazyloaded"
+              data-src="https://cdn.tgdd.vn/Products/Images/522/322613/oppo-pad-neo-6gb-thumb-1-600x600.jpg"
+              alt="OPPO Pad Neo WiFi 6GB/128GB"
+              src="https://cdn.tgdd.vn/Products/Images/522/322613/oppo-pad-neo-6gb-thumb-1-600x600.jpg" />
+            <h3>HP 15 fc0085AU R5 7430U (A6VV8PA)</h3>
+            <div class="item-compare">
+              <span>RAM 8 GB</span>
+              <span>SSD 512 GB</span>
+            </div>
+            <strong class="price">
+              13.090.000₫
+              <span>
+                <label class="price-old"> 14.890.000₫ </label>
+                <small class="percent">-12%</small>
+              </span>
+            </strong>
+            <p class="item-gift">Quà <b>2.190.000₫</b></p>
+            <div class="rating_Compare has_quantity">
+              <div class="vote-txt">
+                <i class="fa fa-star"></i>
+                <b>4.9</b>
+              </div>
+
+              <span>• Đã bán 5,6k</span>
+            </div>
+          </div>
+
+          <div class="col">
+            <img class="thumb lazyloaded"
+              data-src="https://cdn.tgdd.vn/Products/Images/7077/316012/apple-watch-se-2023-vien-nhom-day-silicone-xanh-den-tb-600x600.jpg"
+              alt="Apple Watch SE 2 GPS 44mm viền nhôm dây thể thao"
+              src="https://cdn.tgdd.vn/Products/Images/7077/316012/apple-watch-se-2023-vien-nhom-day-silicone-xanh-den-tb-600x600.jpg" />
+            <h3>HP 15 fc0085AU R5 7430U (A6VV8PA)</h3>
+            <div class="item-compare">
+              <span>RAM 8 GB</span>
+              <span>SSD 512 GB</span>
+            </div>
+            <strong class="price">
+              13.090.000₫
+              <span>
+                <label class="price-old"> 14.890.000₫ </label>
+                <small class="percent">-12%</small>
+              </span>
+            </strong>
+            <p class="item-gift">Quà <b>2.190.000₫</b></p>
+            <div class="rating_Compare has_quantity">
+              <div class="vote-txt">
+                <i class="fa fa-star"></i>
+                <b>4.9</b>
+              </div>
+
+              <span>• Đã bán 5,6k</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3 style="margin-top: 20px">Tuần lễ realme</h3>
+      <img style="border-radius: 20px" class="ls-is-cached lazyloaded" alt="Tuần Lễ realme" src="assets/banner.png" />
+
+      <h3 style="margin-top: 20px">Gian hàng ưu đãi</h3>
+      <div class="banner-box w-100">
+        <img src="assets/banner1.png" />
+        <img src="assets/banner2.png" />
+        <img src="assets/banner3.png" />
+        <img src="assets/banner4.png" />
+      </div>
+
+      <div class="product-list flex" style="margin-top: 30px; border-radius: 8px 8px 0 0">
+        <h3 style="
+              display: block;
+              width: 100%;
+              font-size: 24px;
+              font-weight: 700;
+              line-height: 32px;
+              margin-bottom: 8px;
+            ">
+          Mạng xã hội thegioididong.com
+        </h3>
+        <div class="item-section flex">
+          <div class="item-news">
+            <img class="ls-is-cached lazyloaded" loading="lazy"
+              data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/News/Thumb/1580953/SGAFV1638894707044001495.png"
+              alt="tin-tuc/galaxy-a17-lo-dien-smartphone-gia-re-moi-cua-samsung-voi-thiet-ke-toi-gian-pin-lon"
+              src="https://cdnv2.tgdd.vn/mwg-static/tgdd/News/Thumb/1580953/SGAFV1638894707044001495.png" />
+            <p>
+              Samsung Galaxy A17 lộ diện: Thiết kế tối giản, pin lớn và màn
+              hình AMOLED
+            </p>
+          </div>
+
+          <div class="item-news">
+            <img class="ls-is-cached lazyloaded" loading="lazy"
+              data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/bang-gia-thay-pin-iphone-thumbnail.jpg"
+              alt="hoi-dap/bang-gia-thay-pin-iphone"
+              src="https://cdnv2.tgdd.vn/mwg-static/common/Common/bang-gia-thay-pin-iphone-thumbnail.jpg" />
+            <p>
+              Bảng giá thay pin iPhone giá tốt chính hãng Apple mới nhất 2025
+            </p>
+          </div>
+          <div class="item-news">
+            <img class="ls-is-cached lazyloaded" loading="lazy"
+              data-src="https://cdnv2.tgdd.vn/mwg-static/tgdd/News/Thumb/1580967/ZXCV16PM1638894894446598201.png"
+              alt="tin-tuc/xiaomi-16-pro-max-ro-ri-camera-smartsens-50mp-pin-7-500mah-va-man-hinh-phu"
+              src="https://cdnv2.tgdd.vn/mwg-static/tgdd/News/Thumb/1580967/ZXCV16PM1638894894446598201.png" />
+            <p>
+              Xiaomi 16 Pro Max rò rỉ cấu hình: Camera SmartSens 50MP, pin
+              7.500mAh và màn hình phụ tích hợp
+            </p>
+          </div>
+          <div class="item-news">
+            <img class="ls-is-cached lazyloaded" loading="lazy"
+              data-src="https://cdnv2.tgdd.vn/mwg-static/common/Common/bang-gia-thay-pin-iphone-11-thumbnail.jpg"
+              alt="hoi-dap/bang-gia-thay-pin-iphone-11"
+              src="https://cdnv2.tgdd.vn/mwg-static/common/Common/bang-gia-thay-pin-iphone-11-thumbnail.jpg" />
+            <p>
+              Xiaomi 16 Pro Max rò rỉ cấu hình: Camera SmartSens 50MP, pin
+              7.500mAh và màn hình phụ tích hợp
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="readmore-btn bg-white"><i>Xem thêm ></i></div>
+
+      <div class="product-list flex" style="margin-top: 30px; border-radius: 8px 8px 0 0">
+        <h3 style="
+              display: block;
+              width: 100%;
+              font-size: 24px;
+              font-weight: 700;
+              line-height: 32px;
+              margin-bottom: 8px;
+            ">
+          Mọi người cũng tìm kiếm
+        </h3>
+
+        <ul>
+          <li>iphone 16</li>
+          <li>iphone 16 pro</li>
+          <li>iphone 16 pro max</li>
+          <li>Samsung Galaxy Tab S9</li>
+          <li>Lenovo Tab M11</li>
+          <li>iphone 15</li>
+          <li>iphone 15 plus</li>
+          <li>samsung z flip 7</li>
+          <li>tai nghe airpods</li>
+          <li>airpods 4</li>
+          <li>airpods 4 anc</li>
+          <li>apple watch series 10</li>
+          <li>apple watch series 9</li>
+          <li>apple watch ultra 2</li>
+          <li>asus</li>
+          <li>laptop gaming</li>
+          <li>macbook air</li>
+          <li>macbook pro</li>
+          <li>Mac Studio M4</li>
+          <li>MacBook Air M4</li>
+          <li>airtag</li>
+          <li>loa jbl</li>
+          <li>tai nghe sony</li>
+          <li>loa marshall</li>
+          <li>bàn phím gaming</li>
+          <li>chuột logitech</li>
+          <li>loa harman kardon</li>
+          <li>đồng hồ g shock</li>
+          <li>galaxy watch 8</li>
+          <li>samsung galaxy z series</li>
+          <li>galaxy watch ultra 2025</li>
+          <li>đồng hồ thụy sỹ</li>
+          <li>galaxy watch 8 classic</li>
+          <li>macbook</li>
+          <li>macbook pro m4</li>
+          <li>samsung s25</li>
+          <li>samsung s25 plus</li>
+          <li>samsung galaxy s25 ultra</li>
+          <li>iphone 16e</li>
+          <li>iphone 14</li>
+          <li>samsung galaxy z fold 7</li>
+        </ul>
+      </div>
     </div>
-    <div id="footer"></div>
-  </body>
+  </div>
+  <div id="footer"></div>
+</body>
+
 </html>

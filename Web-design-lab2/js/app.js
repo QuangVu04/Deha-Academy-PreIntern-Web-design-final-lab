@@ -9,6 +9,15 @@ $(document).ready(function () {
       '<button class="tgdd-arrow tgdd-prev"><i class="icon-prev"></i></button>',
     nextArrow:
       '<button class="tgdd-arrow tgdd-next"><i class="icon-next"></i></button>',
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   });
 
   $(".product-slider").slick({
@@ -21,6 +30,17 @@ $(document).ready(function () {
       '<button class="tgdd-arrow tgdd-prev" "><i class="icon-prev"></i></button>',
     nextArrow:
       '<button class="tgdd-arrow tgdd-next"><i class="icon-next"></i></button>',
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2.5,
+          slidesToScroll: 1,
+          infinite: false,
+          arrows: false,
+        },
+      },
+    ],
   });
 
   $(".slider-for").slick({
@@ -29,10 +49,11 @@ $(document).ready(function () {
     fade: true,
     asNavFor: ".slider-nav",
     centerMode: true,
-      prevArrow: '<div class="custom-prev"><i class="fa fa-angle-left"></i></div>',
-  nextArrow: '<div class="custom-next"><i class="fa fa-angle-right"></i></div>',
+    prevArrow:
+      '<div class="custom-prev"><i class="fa fa-angle-left"></i></div>',
+    nextArrow:
+      '<div class="custom-next"><i class="fa fa-angle-right"></i></div>',
   });
-
 
   $(".slider-nav").slick({
     slidesToShow: 11,
@@ -40,6 +61,30 @@ $(document).ready(function () {
     asNavFor: ".slider-for",
     centerMode: true,
     focusOnSelect: true,
+  });
+
+  $(".product-slider").slick({
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    infinite: false,
+    autoplay: false,
+    dots: true,
+    arrows: false, 
+    responsive: [
+    {
+      breakpoint: 488,
+      settings: {
+        slidesToShow: 5,
+      },
+    },
+  ],
+  });
+
+  $(".slider-nav").on("afterChange", function (event, slick, currentSlide) {
+    console.log("Đang ở slide số:", currentSlide);
+    document.getElementById("current-slide").innerText = String(
+      currentSlide + 1
+    );
   });
 });
 
