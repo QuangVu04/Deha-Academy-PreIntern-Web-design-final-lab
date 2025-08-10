@@ -52,7 +52,7 @@ function validateForm(e) {
 
   if (!validEmail(email)) {
     alert("Email không hợp lệ (VD: x@gmail.com).");
-    isValid = false;
+    return false;
   }
 
   if (!message) {
@@ -60,9 +60,6 @@ function validateForm(e) {
     return false;
   }
 
-  isValid = true;
-
-  if (isValid) {
-    alert("Liên lạc thành công");
-  }
+  alert("Liên lạc thành công");
+ 
 }
